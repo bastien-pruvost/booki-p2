@@ -345,7 +345,7 @@ h4 {
 
 .city-lodgings-card img {
   object-fit: cover;
-  height: 120px;
+  height: 115px;
   width: 100%;
 }
 
@@ -515,7 +515,7 @@ h4 {
   }
 
   .popular-lodgings-card {
-    height: 120px;
+    height: 140px;
   }
 
   .activities-section {
@@ -526,12 +526,12 @@ h4 {
   .activities-gallery {
     display: grid;
     grid-template-areas: none;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     grid-template-rows: auto;
     gap: 20px;
   }
   .activity-card {
-    height: 200px;
+    height: 180px;
   }
   .activities-gallery :nth-child(1) {
     grid-area: auto;
@@ -555,6 +555,10 @@ h4 {
   .footer-flex {
     flex-direction: column;
     gap: 35px;
+  }
+
+  .footer-column {
+    width: 100%;
   }
 }
 
