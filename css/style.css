@@ -1,0 +1,338 @@
+/* -- Reset -- */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables */
+
+:root {
+  --primaryColor: #0065fc;
+  --secondaryColor: #deebff;
+  --backgroundColor: #f2f2f2;
+}
+
+/* -- Global styles -- */
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1440px;
+}
+
+/* -- Header -- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  height: 30px;
+  margin: 25px 20px;
+}
+
+.header__nav {
+  display: flex;
+  height: 100%;
+}
+
+.link-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 115px;
+  padding: 0 30px;
+  transition: 0.15s ease-out;
+}
+
+.link-hover-effect {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 0;
+}
+
+.link-hover-effect::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  background-color: var(--primaryColor);
+  transition: 0.15s ease-out;
+}
+
+.link-box > a {
+  transition: 0.1s ease-out;
+}
+
+.link-box > a:hover {
+  color: var(--primaryColor);
+}
+
+.link-box > a:hover + .link-hover-effect::after {
+  transform: scale(1);
+}
+
+/* -- Find Lodging Section -- */
+
+.find-lodging {
+  margin-top: 10px;
+}
+
+/* - Searchbar */
+
+.search {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  border: 1px solid var(--backgroundColor);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.search__icon {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  background-color: var(--backgroundColor);
+}
+
+.search__icon > i {
+  font-size: 18px;
+}
+
+.search__input {
+  flex-grow: 1;
+  min-width: 0;
+  padding: 0 15px;
+  outline: none;
+  border: 1px solid transparent;
+  font-weight: 800;
+  transition: 0.15s ease-out;
+}
+
+.search__input:focus {
+  border-color: #c9c9c9;
+}
+
+.search__btn {
+  border: none;
+  padding: 0 20px;
+  font-weight: 500;
+  background-color: var(--primaryColor);
+  color: white;
+  cursor: pointer;
+}
+
+.search__btn:hover {
+  opacity: 0.85;
+}
+
+.search__btn--mobile {
+  display: none;
+  font-size: 1rem;
+}
+
+/* - Filters - */
+
+.filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 30px 0 40px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border: 2px solid #dbdbdb;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.15s ease-out;
+}
+
+.filter__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  transform: translateX(-2px);
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+  border-radius: 50%;
+}
+
+.filter > span {
+  padding: 0 15px 0 10px;
+}
+
+.filter:hover {
+  background-color: #f5f8fc;
+  transform: translateY(-1px);
+}
+
+/* - Information - */
+
+.info {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 50%;
+}
+
+.info__icon > i {
+  font-size: 0.7rem;
+  color: var(--primaryColor);
+}
+
+.info > span {
+  margin-top: 4px;
+}
+
+/* -- Lodgings -- */
+
+.lodgings-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 40px;
+  margin-top: 30px;
+}
+
+/* - City Lodgings - */
+
+.city-lodgings {
+  flex: 1 1 66%;
+  background-color: var(--backgroundColor);
+  border-radius: 16px;
+  height: 100px;
+}
+
+/* - Popular lodgings - */
+
+.popular-lodgings {
+  flex: 1 1 33%;
+  background-color: var(--backgroundColor);
+  border-radius: 16px;
+  height: 100px;
+}
+
+/* ---- Responsive ---- */
+
+/* --- Tablet --- */
+@media (max-width: 992px) {
+  .wrapper {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .filters__title {
+    margin-right: 80%;
+  }
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  /* -- Global Styles -- */
+
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* -- Header -- */
+
+  .header {
+    padding: 0;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .header__nav {
+    width: 100%;
+  }
+
+  .link-box {
+    width: 50%;
+    height: 50px;
+  }
+
+  .link-hover-effect {
+    top: unset;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--backgroundColor);
+  }
+
+  /* -- Find Lodging Section -- */
+
+  .search__btn {
+    border-radius: 16px;
+  }
+
+  .search__btn--large {
+    display: none;
+  }
+
+  .search__btn--mobile {
+    display: inline-block;
+  }
+
+  .filters {
+    gap: 10px;
+  }
+
+  .filter > span {
+    font-size: 1rem;
+  }
+}

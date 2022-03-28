@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booki</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Css Style -->
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+  <header class="header wrapper">
+    <a href="#"><img class="header__logo" src="./images/logo/booki-logo-2.svg" alt="Logo Booki"></a>
+    <nav class="header__nav">
+      <div class="link-box">
+        <a href="#lodgings">Hébergements</a>
+        <div class="link-hover-effect"></div>
+      </div>
+      <div class="link-box">
+        <a href="#activities">Activités</a>
+        <div class="link-hover-effect"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="find-lodging wrapper">
+      <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+      <p>En plein centre ville ou en pleine nature</p>
+
+      <form action="#" class="search">
+        <label for="search__input" class="search__icon"><i class="fas fa-map-marker-alt"></i></label>
+        <input type="text" class="search__input" id="search__input" placeholder="Chercher une Ville" value="Marseille, France">
+        <button class="search__btn"><span class="search__btn--large">Rechercher</span><i class="search__btn--mobile fas fa-search"></i></button>
+      </form>
+
+      <div class="filters">
+        <span class="filters__title">Filtres</span>
+        <div class="filter">
+          <div class="filter__icon"><i class="fas fa-money-bill-wave"></i></div>
+          <span>Économique</span>
+        </div>
+        <div class="filter">
+          <div class="filter__icon"><i class="fas fa-child"></i></div>
+          <span>Familial</span>
+        </div>
+        <div class="filter">
+          <div class="filter__icon"><i class="fas fa-heart"></i></div>
+          <span>Romantique</span>
+        </div>
+        <div class="filter">
+          <div class="filter__icon"><i class="fas fa-dog"></i></div>
+          <span>Animaux autorisés</span>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="info__icon"><i class="fas fa-info"></i></div>
+        <span>Plus de 500 logements sont disponibles dans cette ville</span>
+      </div>
+    </section>
+
+    <div class="lodgings-container wrapper" id="lodgings">
+
+      <section class="city-lodgings">
+
+      </section>
+
+      <section class="popular-lodgings">
+
+      </section>
+    </div>
+
+
+  </main>
+
+  <footer>
+
+  </footer>
+
+
+</body>
+
+</html>
