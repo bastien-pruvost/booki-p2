@@ -29,16 +29,22 @@ a {
   color: inherit;
 }
 
-h1,
-h2 {
+h1 {
   font-size: 1.35rem;
   font-weight: 800;
-  margin-bottom: 10px;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 .wrapper {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 3%;
+  padding-right: 3%;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -106,6 +112,10 @@ h2 {
 
 .find-lodging {
   margin-top: 10px;
+}
+
+.find-lodging > h1 {
+  margin-bottom: 10px;
 }
 
 /* - Searchbar */
@@ -245,26 +255,119 @@ h2 {
 .lodgings-container {
   display: flex;
   justify-content: space-between;
-  gap: 0 40px;
+  gap: 3%;
   margin-top: 30px;
+}
+
+.lodgings-section {
+  background-color: var(--backgroundColor);
+  border-radius: 16px;
+  padding: 3%;
+}
+
+.lodgings-section h2 {
+  margin-bottom: 20px;
+}
+
+.lodgings-galery {
+  display: grid;
+  gap: 30px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.lodgings-card {
+  background-color: #ffffff;
+  border: 5px solid #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 2px 2px 16px #0000001f;
+  transition: 0.2s ease-out;
+}
+
+.lodgings-card:hover {
+  transform: translateY(-2px);
+}
+
+.lodgings-card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.lodgings-card__info h3 {
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+.lodgings-card__info p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.lodgings-card__info span {
+  font-weight: 600;
+}
+
+.rating {
+  font-size: 0.75rem;
+  letter-spacing: -1px;
+}
+
+.rating > i {
+  color: #c5c5c5;
+}
+
+.rating > i.active {
+  color: var(--primaryColor);
 }
 
 /* - City Lodgings - */
 
-.city-lodgings {
-  flex: 1 1 66%;
-  background-color: var(--backgroundColor);
-  border-radius: 16px;
-  height: 100px;
+.city-lodgings-section {
+  flex: 1 1 66.6%;
+}
+
+.city-lodgings-card img {
+  object-fit: cover;
+  height: 120px;
+  width: 100%;
 }
 
 /* - Popular lodgings - */
 
-.popular-lodgings {
-  flex: 1 1 33%;
-  background-color: var(--backgroundColor);
-  border-radius: 16px;
-  height: 100px;
+.popular-lodgings-section {
+  flex: 1 1 33.3%;
+}
+
+.popular-lodgings__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popular-lodgings__title > i {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.popular-lodgings-card {
+  display: flex;
+  align-items: stretch;
+  height: 150px;
+}
+.popular-lodgings-card .lodgings-card__info {
+  padding: 3% 4% 3% 5%;
+}
+
+.popular-lodgings-card img {
+  object-fit: cover;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  width: 38%;
+  min-width: 38%;
+  max-width: 38%;
 }
 
 /* ---- Responsive ---- */
@@ -272,25 +375,38 @@ h2 {
 /* --- Tablet --- */
 @media (max-width: 992px) {
   .wrapper {
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 4%;
+    padding-right: 4%;
   }
 
   .filters__title {
     margin-right: 80%;
   }
+
+  .lodgings-container {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .lodgings-galery {
+    gap: 20px;
+  }
+
+  .popular-lodgings-section .lodgings-galery {
+    grid-template-columns: 1fr;
+  }
+
+  .popular-lodgings-card {
+    height: 120px;
+  }
 }
 
 /* --- Mobile --- */
 @media (max-width: 768px) {
-  /* -- Global Styles -- */
-
   .wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5.5%;
+    padding-right: 5.5%;
   }
-
-  /* -- Header -- */
 
   .header {
     padding: 0;
@@ -314,8 +430,6 @@ h2 {
     background-color: var(--backgroundColor);
   }
 
-  /* -- Find Lodging Section -- */
-
   .search__btn {
     border-radius: 16px;
   }
@@ -334,5 +448,24 @@ h2 {
 
   .filter > span {
     font-size: 1rem;
+  }
+
+  .lodgings-container.wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+  }
+
+  .lodgings-section {
+    border-radius: 0;
+    padding: 30px 5.5%;
+  }
+
+  .city-lodgings-section {
+    background-color: #ffffff;
+  }
+
+  .lodgings-galery {
+    gap: 20px;
   }
 }
