@@ -58,8 +58,8 @@ h4 {
 }
 
 .wrapper {
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -566,8 +566,8 @@ h4 {
 /* --- Mobile --- */
 @media (max-width: 768px) {
   .wrapper {
-    padding-left: 5.5%;
-    padding-right: 5.5%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .header {
