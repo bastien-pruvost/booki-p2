@@ -6,6 +6,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 /* Variables */
@@ -35,11 +42,19 @@ h1 {
 }
 h2 {
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 h3 {
   font-size: 1rem;
+  font-weight: 800;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .wrapper {
@@ -152,7 +167,7 @@ h3 {
   padding: 0 15px;
   outline: none;
   border: 1px solid transparent;
-  font-weight: 800;
+  font-weight: bold;
   transition: 0.15s ease-out;
 }
 
@@ -186,7 +201,7 @@ h3 {
   flex-wrap: wrap;
   gap: 15px 25px;
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: bold;
   margin: 30px 0 40px;
 }
 
@@ -218,7 +233,7 @@ h3 {
 }
 
 .filter:hover {
-  background-color: #f5f8fc;
+  color: var(--primaryColor);
   transform: translateY(-1px);
 }
 
@@ -261,15 +276,11 @@ h3 {
 
 .lodgings-section {
   background-color: var(--backgroundColor);
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 3%;
 }
 
-.lodgings-section h2 {
-  margin-bottom: 20px;
-}
-
-.lodgings-galery {
+.lodgings-gallery {
   display: grid;
   gap: 30px;
   justify-content: center;
@@ -279,26 +290,29 @@ h3 {
 .lodgings-card {
   background-color: #ffffff;
   border: 5px solid #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 2px 2px 16px #0000001f;
-  transition: 0.2s ease-out;
+  transition: 0.15s ease-out;
 }
 
 .lodgings-card:hover {
   transform: translateY(-2px);
+}
+.lodgings-card:hover h3 {
+  color: var(--primaryColor);
 }
 
 .lodgings-card__info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+  padding: 5px 10px;
 }
 
 .lodgings-card__info h3 {
   margin-bottom: 4px;
-  font-weight: 800;
+  transition: 0.15s ease-out;
 }
 
 .lodgings-card__info p {
@@ -333,6 +347,17 @@ h3 {
   object-fit: cover;
   height: 120px;
   width: 100%;
+}
+
+.see-more-btn {
+  display: inline-block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-top: 40px;
+}
+
+.see-more-btn:hover {
+  color: var(--primaryColor);
 }
 
 /* - Popular lodgings - */
@@ -370,6 +395,99 @@ h3 {
   max-width: 38%;
 }
 
+/* --- Activities --- */
+
+.activities-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.activities-gallery {
+  display: grid;
+  grid-template-areas:
+    'a b d e'
+    'a b d e'
+    'a b d f'
+    'a c d f'
+    'a c d f';
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-rows: repeat(5, 70px);
+  gap: 30px;
+}
+
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 2px 2px 16px #0000001f;
+  transition: 0.2s ease-out;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+}
+.activity-card:hover h3 {
+  color: var(--primaryColor);
+}
+
+.activity-card > img {
+  object-fit: cover;
+  width: 100%;
+  height: 50%;
+  max-height: none;
+  flex: 1 1;
+}
+
+.activity-card h3 {
+  padding: 20px;
+}
+
+.activities-gallery :nth-child(1) {
+  grid-area: a;
+}
+.activities-gallery :nth-child(2) {
+  grid-area: b;
+}
+.activities-gallery :nth-child(3) {
+  grid-area: c;
+}
+.activities-gallery :nth-child(4) {
+  grid-area: d;
+}
+.activities-gallery :nth-child(5) {
+  grid-area: e;
+}
+.activities-gallery :nth-child(6) {
+  grid-area: f;
+}
+
+/* --- Footer --- */
+
+.footer {
+  background-color: var(--backgroundColor);
+}
+
+.footer-flex {
+  display: flex;
+  padding: 40px 0;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+.footer-column > a {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.footer-column > a:hover {
+  text-decoration: underline;
+}
+
 /* ---- Responsive ---- */
 
 /* --- Tablet --- */
@@ -388,16 +506,55 @@ h3 {
     gap: 30px;
   }
 
-  .lodgings-galery {
+  .lodgings-gallery {
     gap: 20px;
   }
 
-  .popular-lodgings-section .lodgings-galery {
+  .popular-lodgings-section .lodgings-gallery {
     grid-template-columns: 1fr;
   }
 
   .popular-lodgings-card {
     height: 120px;
+  }
+
+  .activities-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .activities-gallery {
+    display: grid;
+    grid-template-areas: none;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+  .activity-card {
+    height: 200px;
+  }
+  .activities-gallery :nth-child(1) {
+    grid-area: auto;
+  }
+  .activities-gallery :nth-child(2) {
+    grid-area: auto;
+  }
+  .activities-gallery :nth-child(3) {
+    grid-area: auto;
+  }
+  .activities-gallery :nth-child(4) {
+    grid-area: auto;
+  }
+  .activities-gallery :nth-child(5) {
+    grid-area: auto;
+  }
+  .activities-gallery :nth-child(6) {
+    grid-area: auto;
+  }
+
+  .footer-flex {
+    flex-direction: column;
+    gap: 35px;
   }
 }
 
@@ -465,7 +622,12 @@ h3 {
     background-color: #ffffff;
   }
 
-  .lodgings-galery {
+  .lodgings-gallery {
     gap: 20px;
+  }
+
+  .activities-section {
+    padding-top: 30px;
+    padding-bottom: 40px;
   }
 }
