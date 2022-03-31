@@ -17,7 +17,7 @@ Second project of the Web Developer training path on Openclassrooms
 
 ### Clone the repo :
 
-git clone https://github.com/Dev-BastienPruvost/MyProject.git
+git clone https://github.com/Dev-BastienPruvost/booki-p2.git
 
 
 ## Credits
