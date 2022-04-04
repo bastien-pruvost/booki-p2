@@ -13,6 +13,11 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* --- Variables --- */
 
 :root {
@@ -29,15 +34,11 @@ body {
   letter-spacing: 0;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 h1 {
   font-size: 1.35rem;
   font-weight: 800;
 }
+
 h2 {
   font-size: 1.35rem;
   font-weight: 700;
@@ -329,7 +330,7 @@ h4 {
 /* -- City Lodgings -- */
 
 .city-lodgings-section {
-  flex: 1 1 66.6%;
+  flex-basis: 66.6%;
 }
 
 .city-lodgings-card {
@@ -360,7 +361,7 @@ h4 {
 /* -- Popular lodgings -- */
 
 .popular-lodgings-section {
-  flex: 1 1 33.3%;
+  flex-basis: 33.3%;
 }
 
 .popular-lodgings__title {
@@ -385,11 +386,8 @@ h4 {
 .popular-lodgings-card img {
   object-fit: cover;
   height: 100%;
-  min-height: 100%;
-  max-height: 100%;
   width: 38%;
   min-width: 38%;
-  max-width: 38%;
 }
 
 /* --- Activities --- */
@@ -407,7 +405,7 @@ h4 {
     'a b d f'
     'a c d f'
     'a c d f';
-  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 70px);
   gap: 30px;
 }
@@ -470,7 +468,8 @@ h4 {
 
 .footer-flex {
   display: flex;
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .footer-column {
