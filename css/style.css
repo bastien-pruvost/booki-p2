@@ -171,6 +171,7 @@ h4 {
   background-color: var(--primaryColor);
   color: white;
   cursor: pointer;
+  transition: 0.15s ease-in-out;
 }
 
 .search__btn:hover {
