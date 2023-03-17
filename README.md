@@ -11,7 +11,7 @@ https://booki.pruvostbastien.fr
 
 # Booki - Bootcamp Project
 
-Second project of the Web Developer training path on Openclassrooms.
+Second project of Openclassrooms Web Developer Bootcamp.
 
 [booki.pruvostbastien.fr](https://booki.pruvostbastien.fr)
 
@@ -25,6 +25,12 @@ The goal of this project was to reproduce a web page starting from a given model
 
 - Responsive
 - Respect the given model
+
+
+## Tech Stack
+
+- HTML
+- CSS
 
 
 ## Run locally
